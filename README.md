@@ -35,7 +35,7 @@ The process of fitting a model is relatively straight forward:
 
 To evaluate the models, we compute the **accuracy** and the **F1-score** for each model.
 
-* Accuracy is defined as $$\frac{\text{# correct predictions}}{\text{# total predictions}}$$
+* Accuracy is defined as $$\frac{\text{no. of correct predictions}}{\text{no. of total predictions}}$$
 * The F1-score combines the measure of accuracy and recall $$\frac{1}{N} \sum_{i=0}^{N-1}2\frac{|P_i\cap L_i|}{|P_i|\cdot|L_i|},$$
 where $L_0, L_1, ..., L_{N-1}$ are the label sets and $P_0, P_1, ..., P_{N-1}$ the prediction sets
 
