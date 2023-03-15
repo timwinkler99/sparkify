@@ -33,3 +33,21 @@ The process of fitting a model is relatively straight forward:
 6. Fit model
 
 To evaluate the models, we compute the **accuracy** and the **F1-score** for each model.
+
+
+### Results
+
+Running the 4 models provides us with the following results:
+
+| model | accuracy | f1-score |
+|-------|----------|----------|
+| lrm   | 0.7429   | 0.6868   |
+| rfc   | 0.7714   | 0.7312   |
+| gbt   | 0.8571   | 0.8513   |
+| svm   | 0.6571   | 0.5212   |
+
+Clearly the gradient-boosted tree model provides the highest accuracy and f1-score.
+
+# Notes
+
+The data for this project was provided by Udacity and is part of the Data Science Nanodegree.
