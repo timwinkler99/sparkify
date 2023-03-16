@@ -4,6 +4,8 @@
 
 Sparkify is an online music streaming service. It has customers which listen to music, rate it, change their subscription and sometimes cancel their account. The goal of this project is to predict clients which are likely to cancel their account, such that Sparkify can make them certain offers in order to keep them on their platform.
 
+For more background and details see the corresponding [blog post](https://timwinkler99.github.io/portfolio/predicting-churn-sparkify).
+
 ## Getting Started
 
 1. Create conda environment
