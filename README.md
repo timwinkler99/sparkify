@@ -20,6 +20,20 @@ After loading the data into a notebook, we'll notice some columns require format
 
 Furthermore, we delete all rows without a userId since we are not able to distinguish between who made the actions.
 
+### Exploratory Data Analysis
+
+To learn about how users interact with the platform, we divide each users logs into different regimes. The first regime starts when the first log appears and it is either a paid or free regime. When the user upgrades or downgrades his account, a new regime starts. Hence, we are able to see for example, if a users who downgrades to a free account, submitted a high number of thumbs down. The result is stored in the `user_regime` table.
+
+The statement to obtain the `user_regime` table got a little bit more complicated. Removing the final select statement and querying each pretable might give you an idea about what's happining.
+
+To get the data ready for the ML model, the `user_regime` table is simply aggregated to have one row per user ID.
+
+#### Troubleshooting & Abnormalities
+
+While performing this aggregation, it occured that some logs of a user have the same exact timestamp, which caused mistakes in partition statements. This was resolved by partitioning the log per user and assigning row numbers.
+
+Related to this issue, we came across the fact that if the action of a user failed, the error is recorded in a preceeding log. This means, that for any log, we have to check what the message of the next log is, to filter out actions that were ultimately not performed.
+
 
 ### Modeling
 
@@ -50,6 +64,6 @@ Running the 4 models provides us with the following results:
 
 Clearly the gradient-boosted tree model provides the highest accuracy and f1-score.
 
-# Notes
+# Acknowledgements
 
 The data for this project was provided by Udacity and is part of the Data Science Nanodegree.
